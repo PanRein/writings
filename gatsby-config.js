@@ -9,15 +9,15 @@
  */
 module.exports = {
   siteMetadata: {
-    title: `Gatsby Starter Blog`,
+    title: `Writings`,
     author: {
-      name: `Kyle Mathews`,
-      summary: `who lives and works in San Francisco building useful things.`,
+      name: `Panachai Reinthavorn`,
+      summary: `who believes in and follows multidisciplinary paths.`,
     },
-    description: `A starter blog demonstrating what Gatsby can do.`,
+    description: `From fragmented thoughts to complete pieces of writing`,
     siteUrl: `https://gatsbystarterblogsource.gatsbyjs.io/`,
     social: {
-      twitter: `kylemathews`,
+      twitter: `panrein`,
     },
   },
   plugins: [
@@ -83,6 +83,7 @@ module.exports = {
                   url: site.siteMetadata.siteUrl + node.fields.slug,
                   guid: site.siteMetadata.siteUrl + node.fields.slug,
                   custom_elements: [{ "content:encoded": node.html }],
+                  published: node.frontmatter.published
                 })
               })
             },
@@ -97,6 +98,7 @@ module.exports = {
                   frontmatter {
                     title
                     date
+                    published
                   }
                 }
               }
